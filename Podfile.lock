@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.0.1)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - JSQMessagesViewController
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+
+PODFILE CHECKSUM: dac185042d324adb513759d86b862a80b9906eb2
+
+COCOAPODS: 1.2.0.beta.1
