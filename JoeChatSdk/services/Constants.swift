@@ -15,6 +15,7 @@ class ApiUrlConstants {
     static let fsyncSubUrl: String = "/conversation/v2/fsync"
     static let customerInitSubUrl: String = "/customer/init"
     static let imageUploadSubUrl: String = "/file/upload"
+    static let rSyncSubUrl: String = "/conversation/v2/rsync"
 }
 
 class ApiHeaderConstants {

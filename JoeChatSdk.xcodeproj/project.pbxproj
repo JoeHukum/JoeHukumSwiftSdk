@@ -26,6 +26,7 @@
 		68C34B7A1DCF3029005DA8A9 /* CustomerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C34B791DCF3029005DA8A9 /* CustomerClient.swift */; };
 		68C34B7C1DCF3064005DA8A9 /* MessagingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C34B7B1DCF3064005DA8A9 /* MessagingClient.swift */; };
 		68C34B7E1DCF308F005DA8A9 /* BaseHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C34B7D1DCF308F005DA8A9 /* BaseHttpClient.swift */; };
+		68FB4CBB1DD9C8D400703B98 /* CustomerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FB4CBA1DD9C8D400703B98 /* CustomerStore.swift */; };
 		BF786F0FADB44711AE893FB3 /* Pods_JoeChatSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B67FC6DA53D492483EB8680 /* Pods_JoeChatSdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		68C34B791DCF3029005DA8A9 /* CustomerClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerClient.swift; path = services/CustomerClient.swift; sourceTree = "<group>"; };
 		68C34B7B1DCF3064005DA8A9 /* MessagingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingClient.swift; path = services/MessagingClient.swift; sourceTree = "<group>"; };
 		68C34B7D1DCF308F005DA8A9 /* BaseHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHttpClient.swift; sourceTree = "<group>"; };
+		68FB4CBA1DD9C8D400703B98 /* CustomerStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerStore.swift; path = services/CustomerStore.swift; sourceTree = "<group>"; };
 		F27E23F37525B754765BBF2A /* Pods-JoeChatSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoeChatSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoeChatSdk/Pods-JoeChatSdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				68C34B791DCF3029005DA8A9 /* CustomerClient.swift */,
 				68C34B7B1DCF3064005DA8A9 /* MessagingClient.swift */,
 				68BE2E0D1DD3284700D9A66D /* NpsClient.swift */,
+				68FB4CBA1DD9C8D400703B98 /* CustomerStore.swift */,
 				68C34B7D1DCF308F005DA8A9 /* BaseHttpClient.swift */,
 				68BE2DFC1DD1C66E00D9A66D /* Constants.swift */,
 				68BE2E081DD20E5400D9A66D /* converters */,
@@ -296,6 +299,7 @@
 				68C34B7E1DCF308F005DA8A9 /* BaseHttpClient.swift in Sources */,
 				68549CC31DCF2BAF00E12D94 /* ViewController.swift in Sources */,
 				68C34B741DCF2FAE005DA8A9 /* CustomerService.swift in Sources */,
+				68FB4CBB1DD9C8D400703B98 /* CustomerStore.swift in Sources */,
 				68C34B721DCF2F96005DA8A9 /* MessagingService.swift in Sources */,
 				68C34B7C1DCF3064005DA8A9 /* MessagingClient.swift in Sources */,
 				68BE2E031DD1C9FC00D9A66D /* JhMessage.swift in Sources */,

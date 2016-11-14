@@ -16,16 +16,25 @@ class MessagingService {
         apiClient = MessagingClient(withCredentials: clientHash, customerHash: customerHash)
     }
     
-    func sendMessage(message: JhMessage, customerHash: String) -> Void {
+    func sendMessage(message: JhMessage, completion : @escaping(_ message: JhMessage?,_ error: Error?)-> Void ) -> Void {
         let comp = {(message: JhMessage?, error: Error?) -> Void in
             if message != nil {
-                
-            } else if error != nil {
-                
+                completion(message, nil)
             } else {
-                
+                completion(nil, error)
             }
         }
         apiClient.sendMessage(message: message, completion: comp)
+    }
+    
+    func getMessages(completion: @escaping(_ messages: [JhMessage]?, _ error:Error?) -> ()) ->  Void {
+        let comp = {(messages: [JhMessage]?, error: Error?)-> Void in
+            if (messages != nil) {
+                completion(messages, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+        apiClient.chatRsync(completion: comp)
     }
 }

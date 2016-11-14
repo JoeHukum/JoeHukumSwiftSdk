@@ -15,6 +15,13 @@ class ViewController: JSQMessagesViewController{
     var messages = [JSQMessage]()
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
+    var clientHash: String?
+    var customerName: String?
+    var customerEmail: String?
+    var customerPhone: String?
+    var customerHash: String?
+    var messagingService: MessagingService?
+    let customerService: CustomerService = CustomerService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +38,12 @@ class ViewController: JSQMessagesViewController{
         addMessage(withId: senderId, name: senderDisplayName, text: "I bet I can run faster than you!")
         addMessage(withId: senderId, name: senderDisplayName, text: "I like to run!")
         // animates the receiving of a new message on the view
+        
         finishReceivingMessage()
+    }
+    
+    private func initMessagingService() {
+        messagingService = MessagingService(withCredentials: clientHash!, customerHash: customerHash!)
     }
     
     private func addMessage(withId id: String, name: String, text: String) {

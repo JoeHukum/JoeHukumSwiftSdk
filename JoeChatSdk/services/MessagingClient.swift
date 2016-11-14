@@ -78,4 +78,9 @@ class MessagingClient: BaseHttpClient {
             }
         }
     }
+    
+    func chatRsync(completion: @escaping (_ messages: [JhMessage]?, _ error: Error?)-> Void) -> Void {
+        let url = baseUrl + ApiUrlConstants.rSyncSubUrl
+        
+    }
 }
