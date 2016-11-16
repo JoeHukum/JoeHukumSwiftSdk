@@ -13,7 +13,6 @@ class MessagingService {
     let apiClient: MessagingClient
     
     init(withClientHash clientHash: String, customerHash: String) {
-        
         apiClient = MessagingClient(withClientHash: clientHash, customerHash: customerHash)
     }
     

@@ -31,7 +31,8 @@ class ViewController: JSQMessagesViewController{
     }
     
     private func initServices() {
-        self.customerService = CustomerService(withClientHash: "24410db029f15c3eb0784f7c70064541")
+        self.clientHash = "24410db029f15c3eb0784f7c70064541"
+        self.customerService = CustomerService(withClientHash: clientHash!)
         self.customerService?.initCustomer(customer: createJhCustomer(), completion:{ (customerHash, error) in
             if (customerHash != nil) {
                 self.customerHash = customerHash

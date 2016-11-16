@@ -20,7 +20,6 @@ class CustomerService {
         self.customerApi = CustomerClient(withConverter: CustomerConverter())
     }
     
-    
     public func initCustomer(customer: JhCustomer,
                              completion: @escaping (_ customerHash: String?,_ error: Error?) -> Void) -> Void {
         
