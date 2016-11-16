@@ -38,6 +38,7 @@ class CustomerClient: BaseHttpClient {
                     completion(self.converter.customerFromInitReponse(dict: json), nil)
                     break
                 case .failure(let error):
+                    print(error)
                     completion(nil, error)
                     break
                 }

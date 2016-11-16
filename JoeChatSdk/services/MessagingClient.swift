@@ -15,7 +15,7 @@ class MessagingClient: BaseHttpClient {
     let customerHash: String
     let headers: [String: String]
     
-    init(withCredentials clientHash: String, customerHash: String){
+    init(withClientHash clientHash: String, customerHash: String){
         self.customerHash = customerHash
         self.headers = [ApiHeaderConstants.channelKey: ApiHeaderConstants.channelKey,
                         ApiHeaderConstants.cleintId: clientHash]

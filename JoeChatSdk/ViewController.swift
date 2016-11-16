@@ -21,12 +21,38 @@ class ViewController: JSQMessagesViewController{
     var customerPhone: String?
     var customerHash: String?
     var messagingService: MessagingService?
-    let customerService: CustomerService = CustomerService()
+    var customerService: CustomerService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setSenderProperties()
+        initServices()
+        setAvatarsForMessages()
+    }
+    
+    private func initServices() {
+        self.customerService = CustomerService(withClientHash: "24410db029f15c3eb0784f7c70064541")
+        self.customerService?.initCustomer(customer: createJhCustomer(), completion:{ (customerHash, error) in
+            if (customerHash != nil) {
+                self.customerHash = customerHash
+                print (customerHash!)
+                self.messagingService = MessagingService(withClientHash: self.clientHash!, customerHash: self.customerHash!)
+            } else {
+                print ("error")
+            }
+        })
+    }
+    
+    private func createJhCustomer() -> JhCustomer{
+        return JhCustomer(withName: "pulkit", customerHash: "", email: "", phone: "")
+    }
+    
+    private func setSenderProperties() {
         self.senderId = "bar"
         self.senderDisplayName = "me"
+    }
+    
+    private func setAvatarsForMessages() {
         // No avatars
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
@@ -38,12 +64,11 @@ class ViewController: JSQMessagesViewController{
         addMessage(withId: senderId, name: senderDisplayName, text: "I bet I can run faster than you!")
         addMessage(withId: senderId, name: senderDisplayName, text: "I like to run!")
         // animates the receiving of a new message on the view
-        
         finishReceivingMessage()
     }
     
     private func initMessagingService() {
-        messagingService = MessagingService(withCredentials: clientHash!, customerHash: customerHash!)
+        messagingService = MessagingService(withClientHash: clientHash!, customerHash: customerHash!)
     }
     
     private func addMessage(withId id: String, name: String, text: String) {

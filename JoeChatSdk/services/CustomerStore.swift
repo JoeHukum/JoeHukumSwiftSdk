@@ -21,19 +21,19 @@ class CustomerStore {
         defaults = UserDefaults.standard
     }
     
-    public func setCustomerDetails(customerName: String, customerEmail: String, customerPhone: String) {
-        defaults.set(customerName, forKey: CustomerStore.keyCustomerName)
-        defaults.set(customerEmail, forKey: CustomerStore.keyCustomerEmail)
-        defaults.set(customerPhone, forKey: CustomerStore.keyCustomerPhone)
+    public func setCustomerDetails(customer: JhCustomer) {
+        defaults.set(customer.name!, forKey: CustomerStore.keyCustomerName)
+        defaults.set(customer.email!, forKey: CustomerStore.keyCustomerEmail)
+        defaults.set(customer.phone!, forKey: CustomerStore.keyCustomerPhone)
+        defaults.set(customer.customerHash!, forKey: CustomerStore.keyCustomerHash)
     }
     
-    public func getCustomerDetails() -> [String: String] {
+    public func getCustomerDetails() -> JhCustomer {
         let customerName = defaults.string(forKey: CustomerStore.keyCustomerName)
         let customerEmail = defaults.string(forKey: CustomerStore.keyCustomerEmail)
         let customerPhone = defaults.string(forKey: CustomerStore.keyCustomerPhone)
-        return [CustomerStore.keyCustomerName: customerName!,
-                CustomerStore.keyCustomerEmail: customerEmail!,
-                CustomerStore.keyCustomerPhone: customerPhone!]
+        let customerHash = defaults.string(forKey: CustomerStore.keyCustomerHash)
+        return JhCustomer(withName: customerName!, customerHash: customerHash!, email: customerEmail!, phone: customerPhone!)
     }
     
     public func setCustomerHash(customerHash: String) {

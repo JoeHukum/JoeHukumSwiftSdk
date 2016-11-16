@@ -11,6 +11,6 @@ import Foundation
 class CustomerConverter {
     
     func customerFromInitReponse(dict: NSDictionary) -> JhCustomer {
-        return JhCustomer()
+        dict
     }
 }
